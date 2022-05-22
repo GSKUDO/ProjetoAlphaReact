@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Task from './Task'
+//import Formlist from './Formlist';
 
 
 function TodoList() {
@@ -29,16 +30,35 @@ function TodoList() {
     }
 
   return (
-      <section className="container">
+      <section className="container">            
+            <label htmlFor="input-group" className='labelforboard'>Cadastrar uma tarefa</label>
             <section className='input-group'>
-                <input 
-                    value={newTask} 
-                    onInput={(event)=> setNewTask(event.target.value)}/>
-                <br/>                
-                <button type="submit" onClick={() => AddTask(newTask)}>Inserir Tarefa</button>
-                <br/>
+                <div className='input-each'>
+                    <label htmlFor="tarefa">Sua Tarefa</label>
+                    <input 
+                        name="tarefa"
+                        value={newTask} 
+                        onInput={(event)=> setNewTask(event.target.value)}/>
+                    <br/>
+                </div>
+                <div className='input-each'>
+                    <label htmlFor="data">Prazo</label>
+                    <input 
+                        name='data'
+                        value="data"
+                        type="date" />
+                    <br/>                
+                </div>
+                <div className='input-each'>
+                    <label htmlFor="status">Status</label>
+                    <input 
+                        name='status'
+                        value="status" 
+                        type="text" />
+                    <br/> 
+                </div>                   
             </section>
-
+            <button type="submit" onClick={() => AddTask(newTask)}>Inserir Tarefa</button>
             <label htmlFor="board" className='labelforboard'>Quadro de Tarefas</label>
             <div className='board'>
                 <section className="task-list-red">

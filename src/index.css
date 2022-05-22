@@ -11,23 +11,43 @@ body {
 }
 
 input{
-  width: 532px;
-  height: 40px;
-  box-shadow: inset 2px 2px 4px 0px rgb(69 53 104 / 20%);
-  border-bottom: 2px solid #c3b7de;
-  padding: 0 10px;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #26038A;
+  border-radius: 10px;
+  height: 50px;
+  width: 394px;
+  left: 64px;
+  top: 200px;
 }
 
 .input-group{
-  margin: auto;
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.input-group label{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #26038A;
+}
+
+.input-each{
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
+  text-align: center;
 }
 
-
 button {
+  margin: auto;
   background-color: #1B42A5;
   color: #ffffff;
   font-size: 20px;
@@ -137,5 +157,12 @@ button {
   background-color: #0CE155;
   height: 76px;
   color: white;
+  text-align: center;
+}
+
+.header{
+  background-color: #26038A;
+  color: white;
+  background: 100%;
   text-align: center;
 }
