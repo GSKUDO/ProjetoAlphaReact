@@ -30,21 +30,44 @@ function TodoList() {
 
   return (
       <section className="container">
-          <input 
-            value={newTask} 
-            onInput={
-                (event)=> 
-                    setNewTask(event.target.value)
-            }/>
-            <button type="submit" onClick={() => AddTask(newTask)}>Add</button>
-            {<section className="task-list">
-                {
-                    tasks.map((task,index) => (
-                        <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
-                    ))
-                }
+            <section className='input-group'>
+                <input 
+                    value={newTask} 
+                    onInput={(event)=> setNewTask(event.target.value)}/>
+                <br/>                
+                <button type="submit" onClick={() => AddTask(newTask)}>Inserir Tarefa</button>
+                <br/>
+            </section>
+
+            <label htmlFor="board" className='labelforboard'>Quadro de Tarefas</label>
+            <div className='board'>
+                <section className="task-list-red">
+                    <h2 className='afazer'>A fazer </h2>
+                    {
+                        tasks.map((task,index) => (
+                            <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        ))
+                    }
+                </section>
+
+                <section className="task-list-yellow">
+                    <h2 className='fazendo'>Fazendo </h2>
+                    {   
+                        tasks.map((task,index) => (
+                            <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        ))
+                    }   
+                </section>
                 
-            </section>}
+                <section className="task-list-green">
+                    <h2 className='finalizado'>Finalizado </h2>
+                    {
+                        tasks.map((task,index) => (
+                            <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        ))
+                    }
+                </section>
+            </div>
       </section>
   );
 }

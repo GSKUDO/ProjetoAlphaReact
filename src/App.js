@@ -1,10 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from "./Components/Header"
+import Addtask from "./Components/Addtask"
+import Todolist from "./Components/Todo";
 
-import TodoList from "./components/Todo";
 
 function App() {
-  return <TodoList />;
+  return (
+    <Header />,
+    <Addtask />,
+    <Todolist />
+  ) 
 }
 
 export default App;
