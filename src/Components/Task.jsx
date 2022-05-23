@@ -12,8 +12,8 @@ function Task(props) {
         <h2 className="titletask">Prazo: </h2>
         <p className="texttask">{props.data}</p>
         <div className="icon">
-            <BsFillTrashFill className=" trash" onClick={() => props.removeTask(props.index)}/>
-            <MdModeEditOutline className="edit" onClick={() => props.editTask(props.index)} />
+            <BsFillTrashFill className=" trash" onClick={() => props.removeTask(props.index, props.status)}/>
+            <MdModeEditOutline className="edit" onClick={() => props.editTask(props.index, props.status, props.data, props.task)} />
         </div>
     </div>
   );
