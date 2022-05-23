@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,200&display=swap');
 
 body {
+  margin: 0;
+  padding: 0;
   background: white;
   font-family: 'Raleway', sans-serif;
 }
@@ -70,7 +72,6 @@ button {
 }
 
 .task {
-  padding: 0 10px;
   min-width: 350px;
   border-bottom: 1px solid rgb(8, 8, 8);
   display: flex;
@@ -163,10 +164,18 @@ button {
 }
 
 .header{
+  margin: 0;
+  padding: 0;
   background-color: #26038A;
+  background-size: 100%;
   color: white;
-  background: 100%;
   text-align: center;
+  height: 100px;
+}
+
+.titleheader{
+  margin: 0;
+  padding-top: 35px;
 }
 
 .titletask{
@@ -174,7 +183,6 @@ button {
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  line-height: 21px;
   color: #1B42A5;
 }
 
@@ -183,6 +191,5 @@ button {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 21px;
   color: #000000;
 }

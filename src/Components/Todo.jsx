@@ -63,7 +63,6 @@ function TodoList() {
         setDates(removeDate)
         let removeStatuss = statuss.filter((t,i) => i != index)
         setStatuss(removeStatuss)
-
     }
 
     function EditTask(index) {
