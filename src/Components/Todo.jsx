@@ -29,7 +29,7 @@ function TodoList() {
             data: date,
             status: sstatus
         }
-        
+        console.log(sstatus)
         if (cardtarefa.status === "afazer"){
             let allRed = red;
             allRed.push(cardtarefa);
@@ -94,12 +94,13 @@ function TodoList() {
                     <br/>                
                 </div>
                 <div className='input-each'>
-                    <label htmlFor="status">Status</label>
-                    <input 
-                        name='status'
-                        value={newStatus}
-                        onInput={(event)=> setNewStatus(event.target.value)}/>
-                    <br/> 
+                    <label htmlFor="statusSelect">Status</label>
+                        <select name="statusSelect" value={newStatus} onChange={(event)=> setNewStatus(event.target.value)}>
+                            <option value="">Escolha uma opção: </option>
+                            <option value="afazer">A fazer</option>
+                            <option value="fazendo">Fazendo</option>
+                            <option value="finalizado">Finalizado</option>
+                        </select>
                 </div>                   
             </section>
             <button type="submit" onClick={() => AddTask(newTask, newDate, newStatus)}>Inserir Tarefa</button>

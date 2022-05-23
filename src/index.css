@@ -12,13 +12,15 @@ body {
   flex-direction: column;
 }
 
-input{
+input, select{
+  margin-top: 0;
+  padding-top:0;
   border-width: 0px 1px 1px 1px;
   border-style: solid;
   border-color: #26038A;
   border-radius: 10px;
   height: 50px;
-  width: 394px;
+  width: 400px;
   left: 64px;
   top: 200px;
 }
@@ -43,8 +45,6 @@ input{
 .input-each{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-items: center;
   text-align: center;
 }
 
