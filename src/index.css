@@ -72,20 +72,16 @@ button {
 .task {
   padding: 0 10px;
   min-width: 350px;
-  height: 40px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(8, 8, 8);
   display: flex;
-  justify-items: center;
-}
-
-.task label {
-  padding: 10px;
+  flex-direction: column;
 }
 
 .icon {
   width: 60px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: right;
   gap: 10px;
 }
 
@@ -109,14 +105,20 @@ button {
 
 .task-list-red{
   background-color: #FFD0D0;
+  width:370px;
+  border: 1px solid #D21B1B;
 }
 
 .task-list-yellow{
   background-color: #FFFDCE;
+  width:370px;
+  border: 1px solid #DFD600;
 }
 
 .task-list-green{
   background-color: #DFFAE8;
+  width:370px;
+  border: 1px solid #0CE155;
 }
 
 .labelforboard{
@@ -165,4 +167,22 @@ button {
   color: white;
   background: 100%;
   text-align: center;
+}
+
+.titletask{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1B42A5;
+}
+
+.texttask{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
 }

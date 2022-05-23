@@ -10,7 +10,9 @@ function TodoList() {
     const [dates, setDates] = useState([]);
     const [newStatus, setNewStatus] = useState("");
     const [statuss, setStatuss] = useState([]);
-    var cardtarefa = {}
+    const [red, setRed] = useState([]);
+    const [yellow, setYellow] = useState([]);
+    const [green, setGreen] = useState([]);
 
     function AddTask(task, date, sstatus, index) {
         let allTasks = tasks;
@@ -22,15 +24,29 @@ function TodoList() {
         let allStatuss = statuss;
         allStatuss.push(sstatus);
         setStatuss(allStatuss);
-        cardtarefa = {
+        let cardtarefa = {
             tarefa: task,
             data: date,
             status: sstatus
         }
-        console.log(cardtarefa)
-        console.log(allTasks);
-        console.log(allDates);
-        console.log(allStatuss);
+        
+        if (cardtarefa.status === "afazer"){
+            let allRed = red;
+            allRed.push(cardtarefa);
+            setRed(allRed);
+            console.log(red)
+        }else if (cardtarefa.status === "fazendo"){
+            let allYellow = yellow;
+            allYellow.push(cardtarefa);
+            setYellow(allYellow);
+            console.log(yellow)
+        }else if (cardtarefa.status === "finalizado"){
+            let allGreen = green;
+            allGreen.push(cardtarefa);
+            setGreen(allGreen);
+            console.log(green)
+        }
+
         ClearInput();
     }
 
@@ -93,8 +109,8 @@ function TodoList() {
                 <section className="task-list-red">
                     <h2 className='afazer'>A fazer </h2>
                     {
-                        tasks.map((task,index) => (
-                            <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        red.map((task, index) => (
+                            <Task task={task.tarefa} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
                         ))
                     }
                 </section>
@@ -102,8 +118,8 @@ function TodoList() {
                 <section className="task-list-yellow">
                     <h2 className='fazendo'>Fazendo </h2>
                     {   
-                        tasks.map((task,index) => (
-                            <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        yellow.map((task,index) => (
+                            <Task task={task.tarefa} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
                         ))
                     }   
                 </section>
@@ -111,8 +127,8 @@ function TodoList() {
                 <section className="task-list-green">
                     <h2 className='finalizado'>Finalizado </h2>
                     {
-                       tasks.map((task,index) => (
-                            <Task task={task} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                       green.map((task,index) => (
+                            <Task task={task.tarefa} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
                         ))
                     }
                 </section>
