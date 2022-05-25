@@ -71,32 +71,6 @@ button {
   text-align: center;
 }
 
-.task {
-  min-width: 350px;
-  border-bottom: 1px solid rgb(8, 8, 8);
-  display: flex;
-  flex-direction: column;
-}
-
-.icon {
-  width: 60px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: right;
-  gap: 10px;
-}
-
-.trash  {
-  color: #f8a02c;
-  cursor: pointer;
-}
-
-.edit {
-  color: #89798b;
-  cursor: pointer;
-
-}
-
 .board{
   display: flex;
   flex-direction: row;
@@ -161,22 +135,4 @@ button {
   height: 76px;
   color: white;
   text-align: center;
-}
-
-
-
-.titletask{
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  color: #1B42A5;
-}
-
-.texttask{
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  color: #000000;
 }

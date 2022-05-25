@@ -1,22 +1,25 @@
 import React from 'react';
 import { MdModeEditOutline } from 'react-icons/md';
 import { BsFillTrashFill } from 'react-icons/bs';
-
-// import { Container } from './styles';
+import {TaskContainer} from './styles'
+import {TitleTask} from './styles'
+import {TextTask} from './styles'
+import {Icon} from './styles'
 
 function Task(props) {
   return (
-    <div className="task">
-        <h2 className="titletask">Descrição: </h2>
-        <p className="texttask">{props.task}</p>
-        <h2 className="titletask">Prazo: </h2>
-        <p className="texttask">{props.data}</p>
-        <div className="icon">
-            <BsFillTrashFill className=" trash" onClick={() => props.removeTask(props.index, props.status)}/>
-            <MdModeEditOutline className="edit" onClick={() => props.editTask(props.index, props.status, props.data, props.task)} />
-        </div>
-    </div>
-  );
+  <TaskContainer>
+    <TitleTask>Descrição: </TitleTask>
+        <TextTask>{props.task}</TextTask>
+    <TitleTask>Prazo: </TitleTask>
+        <TextTask>{props.data}</TextTask>
+    <Icon>
+        <MdModeEditOutline onClick={() => props.removeTask(props.index, props.status)}/>
+        <BsFillTrashFill onClick={() => props.editTask(props.index, props.status, props.data, props.task)} />
+    </Icon>
+  </TaskContainer>
+);
+
 }
 
 export default Task;
