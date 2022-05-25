@@ -14,8 +14,8 @@ function Task(props) {
     <TitleTask>Prazo: </TitleTask>
         <TextTask>{props.data}</TextTask>
     <Icon>
-        <MdModeEditOutline onClick={() => props.removeTask(props.index, props.status)}/>
-        <BsFillTrashFill onClick={() => props.editTask(props.index, props.status, props.data, props.task)} />
+        <BsFillTrashFill onClick={() => props.removeTask(props.index, props.status)}/>
+        <MdModeEditOutline onClick={() => props.editTask(props.index, props.status, props.data, props.task)} />
     </Icon>
   </TaskContainer>
 );

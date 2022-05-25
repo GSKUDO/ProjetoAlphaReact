@@ -2,6 +2,18 @@ import React, { useState } from 'react';
 import Task from '../task/Task';
 //import Formlist from './Formlist';
 
+import {Container} from './styles'
+import {LabelBoard} from './styles'
+import {InputGroup} from './styles'
+import {InputEach} from './styles'
+import {Button} from './styles'
+import {Input} from './styles'
+import {Select} from './styles'
+import {Board} from './styles'
+import {CardSection} from './styles'
+import {Card} from './styles'
+import {LabelInputGroup} from './styles'
+
 
 function TodoList() {
     const [newTask, setNewTask] = useState("");
@@ -77,67 +89,69 @@ function TodoList() {
     }
 
   return (
-      <section className="container">            
-            <label htmlFor="input-group" className='labelforboard'>Cadastrar uma tarefa</label>
-            <section className='input-group'>
-                <div className='input-each'>
-                    <label htmlFor="tarefa">Sua Tarefa</label>
-                    <input 
-                        name="tarefa"
-                        value={newTask} 
-                        onInput={(event)=> setNewTask(event.target.value)}/>
-                    <br/>
-                </div>
-                <div className='input-each'>
-                    <label htmlFor="data">Prazo</label>
-                    <input 
-                        name='data'
-                        value={newDate}
-                        type="date"
-                        onInput={(event)=> setNewDate(event.target.value)}/>
-                    <br/>                
-                </div>
-                <div className='input-each'>
-                    <label htmlFor="statusSelect">Status</label>
-                        <select name="statusSelect" value={newStatus} onChange={(event)=> setNewStatus(event.target.value)}>
-                            <option value="">Escolha uma opção: </option>
-                            <option value="afazer">A fazer</option>
-                            <option value="fazendo">Fazendo</option>
-                            <option value="finalizado">Finalizado</option>
-                        </select>
-                </div>                   
-            </section>
-            <button type="submit" onClick={() => AddTask(newTask, newDate, newStatus)}>Inserir Tarefa</button>
-            <label htmlFor="board" className='labelforboard'>Quadro de Tarefas</label>
-            <div className='board'>
-                <section className="task-list-red">
-                    <h2 className='afazer'>A fazer </h2>
+    <Container>            
+        <LabelBoard htmlFor="input-group">Cadastrar uma tarefa</LabelBoard>
+        <InputGroup name="input-group">
+            <InputEach>
+                <LabelInputGroup htmlFor="tarefa">Sua Tarefa</LabelInputGroup>
+                <Input 
+                    name="tarefa"
+                    value={newTask} 
+                    onInput={(event)=> setNewTask(event.target.value)}/>
+                <br/>
+            </InputEach>
+            <InputEach>
+                <LabelInputGroup htmlFor="data">Prazo</LabelInputGroup>
+                <Input 
+                    name='data'
+                    value={newDate}
+                    type="date"
+                    onInput={(event)=> setNewDate(event.target.value)}/>
+                <br/>                
+            </InputEach>
+            <InputEach>
+                <LabelInputGroup htmlFor="statusSelect">Status</LabelInputGroup>
+                    <Select name="statusSelect" value={newStatus} onChange={(event)=> setNewStatus(event.target.value)}>
+                        <option value="">Escolha uma opção: </option>
+                        <option value="afazer">A fazer</option>
+                        <option value="fazendo">Fazendo</option>
+                        <option value="finalizado">Finalizado</option>
+                    </Select>
+            </InputEach>                   
+        </InputGroup>
+        <Button type="submit" onClick={() => AddTask(newTask, newDate, newStatus)}>Inserir Tarefa</Button>
+
+
+        <LabelBoard htmlFor="board">Quadro de Tarefas</LabelBoard>
+            <Board name="board">
+                <CardSection background="#FFD0D0" border="#D21B1B">
+                    <Card inputColor="#D21B1B">A fazer </Card>
                     {
                         red.map((task, index) => (
-                            <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
                         ))
                     }
-                </section>
+                </CardSection>
 
-                <section className="task-list-yellow">
-                    <h2 className='fazendo'>Fazendo </h2>
+                <CardSection background="#FFFDCE" border="#DFD600">
+                    <Card inputColor="#DFD600">Fazendo </Card>
                     {   
                         yellow.map((task,index) => (
-                            <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
                         ))
                     }   
-                </section>
-                
-                <section className="task-list-green">
-                    <h2 className='finalizado'>Finalizado </h2>
+                </CardSection>
+        
+                <CardSection background="#DFFAE8" border="#0CE155">
+                    <Card inputColor="#0CE155">Finalizado </Card>
                     {
-                       green.map((task,index) => (
-                            <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                        green.map((task,index) => (
+                        <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
                         ))
                     }
-                </section>
-            </div>
-      </section>
+                </CardSection>
+            </Board>
+    </Container>
   );
 }
 
