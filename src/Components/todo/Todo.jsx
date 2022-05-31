@@ -124,32 +124,36 @@ function TodoList() {
 
         <LabelBoard htmlFor="board">Quadro de Tarefas</LabelBoard>
             <Board name="board">
-                <CardSection background="#FFD0D0" border="#D21B1B">
+                <div>
                     <Card inputColor="#D21B1B">A fazer </Card>
-                    {
-                        red.map((task, index) => (
-                        <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
-                        ))
-                    }
-                </CardSection>
-
-                <CardSection background="#FFFDCE" border="#DFD600">
+                    <CardSection background="#FFD0D0" border="#D21B1B">                  
+                        {
+                            red.map((task, index) => (
+                            <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                            ))
+                        }
+                    </CardSection>
+                </div>
+                <div>
                     <Card inputColor="#DFD600">Fazendo </Card>
-                    {   
-                        yellow.map((task,index) => (
-                        <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
-                        ))
-                    }   
-                </CardSection>
-        
-                <CardSection background="#DFFAE8" border="#0CE155">
+                    <CardSection background="#FFFDCE" border="#DFD600">                    
+                        {   
+                            yellow.map((task,index) => (
+                            <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                            ))
+                        }   
+                    </CardSection>            
+                </div>
+                <div>
                     <Card inputColor="#0CE155">Finalizado </Card>
-                    {
-                        green.map((task,index) => (
-                        <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
-                        ))
-                    }
-                </CardSection>
+                    <CardSection background="#DFFAE8" border="#0CE155">
+                        {
+                            green.map((task,index) => (
+                            <Task task={task.tarefa} status={task.status} data={task.data} index={index} removeTask={RemoveTask} editTask={EditTask} key={index}/>
+                            ))
+                        }
+                    </CardSection>
+                </div>                    
             </Board>
     </Container>
   );
